@@ -47,11 +47,11 @@ nav > a {
   position: absolute;
   margin-left: auto;
   margin-right: auto;
-  top: 20rem;
+  top: 40rem;
   opacity: 1;
   left: 0;
   right: 0;
-  transition: all 4s;
+  transition: all 2s;
 }
 .scrolled {
   top: 0;
@@ -63,7 +63,7 @@ nav > a {
   transform: translateY(80%);
   width: 100vw;
   height: 34vh;
-  transition: all 4s;
+  transition: all 3s;
 }
 .waves-opacity {
   opacity: 0;
@@ -116,20 +116,22 @@ nav > a {
   flex-wrap: wrap;
   justify-content: center;
   align-items: start;
+  padding-bottom: 5rem;
 }
 .row {
   display: flex;
   justify-content: space-evenly;
   width: 100vw;
 }
-.row-1{
-    padding-top: 10rem;
+.row-1 {
+  padding-top: 10rem;
 }
 .col {
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: start;
+  max-width: 50%;
 }
 .main-title {
   text-align: center;
@@ -177,8 +179,19 @@ nav > a {
   height: auto;
   z-index: 1;
 }
-.home-img--3{
-    width: 50%;
-    height: auto;
+.home-img--3 {
+  width: 100%;
+  height: auto;
 }
 /*Utility */
+p {
+  font-size: 2.6rem;
+  margin-left: 10rem;
+  padding: 1rem;
+}
+footer {
+  height: 15vh;
+  padding-top: 5rem;
+  background-color: rgb(214, 214, 214);
+  z-index: 2;
+}
