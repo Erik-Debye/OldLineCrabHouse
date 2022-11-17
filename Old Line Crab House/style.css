@@ -1,0 +1,184 @@
+*,
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  background-color: rgb(130, 227, 252);
+}
+header {
+  position: fixed;
+  width: 100vw;
+  height: 10vh;
+  padding: 1.4rem;
+  background-color: rgba(2, 28, 100, 0.76);
+  z-index: 10;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+  font-size: clamp(2.2rem, 15vw, 4rem);
+}
+a {
+  text-decoration: none;
+}
+nav > a {
+  color: white;
+}
+.dynamic-welcome {
+  max-width: 100vw;
+  overflow: hidden;
+}
+.background {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+/*Specific to home page*/
+.crab-img {
+  width: 75vw;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 20rem;
+  opacity: 1;
+  left: 0;
+  right: 0;
+  transition: all 4s;
+}
+.scrolled {
+  top: 0;
+  opacity: 0;
+}
+/*Entire SVG element positioning*/
+.waves {
+  position: fixed;
+  transform: translateY(80%);
+  width: 100vw;
+  height: 34vh;
+  transition: all 4s;
+}
+.waves-opacity {
+  opacity: 0;
+}
+/*Call on keyframe*/
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+/*For each child incease delay of start && increase duration (slow wave)*/
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+/*Key frame, move left to right*/
+@keyframes move-forever {
+  0% {
+    transform: translateX(-9rem);
+  }
+  100% {
+    transform: translateX(8.5rem);
+  }
+}
+/*mobile media query*/
+@media screen and (max-width: 78rem) {
+  .waves {
+    height: 4rem;
+    min-height: 4rem;
+  }
+}
+
+/*Content away from dynamic header*/
+
+.content {
+  background-color: rgb(233, 233, 232);
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+}
+.row {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100vw;
+}
+.row-1{
+    padding-top: 10rem;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+}
+.main-title {
+  text-align: center;
+  padding-top: 20rem;
+  color: rgb(59, 39, 150);
+  font-size: clamp(2.6rem, 15vw, 8rem);
+}
+.main-subtitle {
+  text-align: center;
+  color: rgb(59, 39, 150);
+  font-size: clamp(2.2rem, 15vw, 3.4rem);
+  letter-spacing: 0.6rem;
+}
+.content-title {
+  margin-left: 6rem;
+  color: rgb(25, 90, 151);
+  font-size: clamp(2.6rem, 15vw, 8rem);
+  padding: 4rem;
+}
+.btn {
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.6rem;
+  border: none;
+  background-color: rgb(36, 178, 221);
+  font-size: clamp(2.6rem, 4vw, 3rem);
+  margin-top: 4rem;
+}
+.btn-main {
+  margin-left: 10rem;
+}
+.overlap-img {
+  padding-top: 6rem;
+}
+.home-img--1 {
+  position: relative;
+  transform: translate(70%, 0%);
+  width: 50%;
+  height: auto;
+  z-index: 2;
+}
+.home-img--2 {
+  position: relative;
+  transform: translate(0rem, -70%);
+  width: 50%;
+  height: auto;
+  z-index: 1;
+}
+.home-img--3{
+    width: 50%;
+    height: auto;
+}
+/*Utility */
