@@ -73,7 +73,7 @@ function refreshUI(arr) {
 
   cartEl.insertAdjacentHTML('beforeend', '<h1 class="mt-lg">Your Cart</h1>');
 
-  if (arr.length === 0 || arr === null) {
+  if (!arr || arr.length === 0) {
     cartEl.style.gap = '1.5rem';
     cartEl.insertAdjacentHTML(
       'beforeend',
