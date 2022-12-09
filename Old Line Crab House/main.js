@@ -1,21 +1,23 @@
 'use strict';
 
-//HomePage
+//MOBILE MENU
+const body = document.querySelector('body');
+const menuIco = document.querySelector('.mobile-menu');
+const menu = document.querySelector('.mobile-list');
+const topLine = document.querySelector('.line--1');
+const centerLine = document.querySelector('.line--2');
+const lastLine = document.querySelector('.line--3');
 
-//Move crab on scroll
-//crab
-const crab = document.querySelector('.crab-img');
-const crabShow = document.querySelector('.crab-img-show');
-const waves = document.querySelector('.waves');
-
-window.addEventListener('scroll', (_) => {
-  let scrolled = window.scrollY;
-
-  if (scrolled) {
-    crab.classList.add('scrolled');
-    waves.classList.add('waves-opacity');
-  } else {
-    crab.classList.remove('scrolled');
-    waves.classList.remove('waves-opacity');
-  }
+menuIco.addEventListener('click', (_) => {
+  topLine.classList.toggle('change--1');
+  centerLine.classList.toggle('change--2');
+  lastLine.classList.toggle('change--3');
+  menu.classList.toggle('mobile-list-show');
+  body.classList.toggle('fixed');
 });
+
+
+
+///###This is for the merch page /////
+
+//need to access ls here to save added cart products. 'storage' event

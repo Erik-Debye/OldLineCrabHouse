@@ -4,154 +4,167 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans:wght@400;700&family=Source+Sans+Pro:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <!--JS-->
     <script defer src="./main.js"></script>
-    <link rel="stylesheet" href="style.css" />
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="./style.css" />
     <title>Old Line Crab House - Home</title>
   </head>
-  <body>
-    <section class="dynamic-welcome" id="top">
-      <header>
+  <body class="home-layout">
+    <div class="nav" id="top">
+      <div class="nav-logo"><img class="logo" src="./img/Logo.svg" alt="" /></div>
+      <div class="nav-cont">
         <nav>
           <a href="./index.html">Home</a>
           <a href="./menu.html">Menu</a>
           <a href="./location.html">Location</a>
-          <img src="./img/Logo.svg" class="logo" alt="The Old Line Crab House Logo." />
-          <a href="./about.html">About</a>
           <a href="./merch.html">Merch</a>
           <a href="./cart.html">Cart</a>
         </nav>
-      </header>
-      <div class="background">
-        <h1 class="main-title">Welcome to Old Line Crab House!</h1>
-        <h2 class="main-subtitle">
-          3409 South Maryland Ave <br />
-          Chicago, IL 60622
-        </h2>
-        <h2 class="main-subtitle">(224) GET-CRAB (438-2722)</h2>
-        <img src="./img/Crab 1.svg" class="crab-img" alt="An illustration of a crab." id="crab" />
-        <svg
-          class="waves"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 24 150 28"
-          preserveAspectRatio="none"
-          shape-rendering="auto"
-        >
-          <defs>
-            <path id="wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-          </defs>
-          <g class="parallax">
-            <use xlink:href="#wave" x="48" y="0" fill="rgba(88, 181, 250,0.7)" />
-            <use xlink:href="#wave" x="48" y="3" fill="rgba(88, 181, 250,0.5)" />
-            <use xlink:href="#wave" x="48" y="5" fill="rgba(88, 181, 250,0.2)" />
-            <use xlink:href="#wave" x="48" y="7" fill="rgba(132, 200, 252, 1)" />
-          </g>
-        </svg>
+        <div class="mobile-menu">
+          <div class="line line--1"></div>
+          <div class="line line--2"></div>
+          <div class="line line--3"></div>
+        </div>
+        <div class="mobile-list">
+          <img class="logo" src="./img/Logo.svg" alt="" />
+          <a href="./index.html">Home</a>
+          <a href="./menu.html">Menu</a>
+          <a href="./location.html">Location</a>
+          <a href="./merch.html">Merch</a>
+          <a href="./cart.html">Cart</a>
+        </div>
+      </div>
+    </div>
+    <header class="hero">
+      <div class="title-cont">
+        <h1>Welcome to the Old Line Crab House</h1>
+        <h3>Chicago's First & Only Mid-Atlantic Eatery</h3>
+        <h5>Established 2022</h5>
+      </div>
+      <div class="scroll-more"></div>
+    </header>
+    <section class="row-1 container">
+      <div class="row-1-text view-menu-text">
+        <h1>Maryland Blue Crabs</h1>
+        <h3>Alongside other delicous mid-atlantic foods, we proudly carry the best of mid-atlantic seafood.</h3>
+        <h3>
+          Try out some of our steamed Maryland Blue Crabs, supplied straight from the crab boats of the Chesapeake Bay
+          and onto our tables.
+        </h3>
+
+        <div class="view-menu-btn">
+          <a href="#" class="link-btn">View the Menu</a>
+        </div>
+      </div>
+      <div class="view-menu-img">
+        <img class="view-menu-img-1" src="./img/cookedpot.jpg" alt="" />
+        <img class="view-menu-img-2" src="./img/steamed.jpg" alt="" />
+      </div>
+    </section>
+    <section class="row-2 container">
+      <div class="row-2-img">
+        <img src="./img/boat.jpg" alt="" />
+      </div>
+      <div class="row-2-text">
+        <h1>Who We Are</h1>
+        <h3>
+          Old Line Crab House is an up-and-coming eatery focusing on sharing the delicious foods found within the
+          mid-atlantic region.
+        </h3>
+        <h3>
+          Started by a native Marylander, Old Line Crab House opened it's doors just serving steamed Blue Crabs, but has
+          quickly expanded to include special dishes of all types.
+        </h3>
+        <h3>We welcome all people to come visit in our open and safe environment. We are LGBTQ+ friendly as well!🌈</h3>
+      </div>
+    </section>
+    <section class="row-3 container">
+      <div class="row-3-img">
+        <img src="./img/restaurant_outside.jpg" alt="People entering Old Line Crab Housesalsad" />
+      </div>
+      <div class="reservation-form">
+        <form action="" id="form">
+          <h1>Request a Reservation</h1>
+          <div class="error-container mb-sm">
+            <!--<h1 class='error'></h1>-->
+          </div>
+          <div class="form-row form-row-wrap mb-sm">
+            <fieldset class="title">
+              <label for="title">Title:<span>*</span></label>
+              <input type="text" id="firstname" name="firstname" list="titles" size="2" />
+              <datalist id="titles">
+                <option value="Mrs.">Mrs.</option>
+                <option value="Miss">Miss</option>
+                <option value="Ms.">Ms.</option>
+                <option value="Mr.">Mr.</option>
+                <option value="Dr.">Dr.</option>
+                <option value="None">None</option>
+              </datalist>
+            </fieldset>
+            <fieldset class="firstname">
+              <label for="firstname">First name:<span>*</span></label>
+              <input id="firstname" name="firstname" type="text" placeholder="Tom" size="15" />
+            </fieldset>
+            <fieldset class="lastname">
+              <label for="lastname">Last Name:<span>*</span></label>
+              <input type="text" id="lastname" name="lastname" placeholder="Hanks" size="20" />
+            </fieldset>
+          </div>
+          <div class="form-row form-row-wrap mb-sm">
+            <fieldset class="date">
+              <label for="date">Date:<span>*</span>(mm/dd/yyyy)</label>
+              <!--Will add min/max attributes using js-->
+              <input type="date" name="date" id="date" size="10" />
+            </fieldset>
+            <fieldset class="time">
+              <label for="time">Time:<span>*</span></label>
+              <input type="datetime" name="time" id="time" size="5" />
+            </fieldset>
+            <fieldset class="party">
+              <label for="party">Party Size:<span>*</span></label>
+              <input type="text" name="party" id="party" size="2" />
+            </fieldset>
+          </div>
+          <div class="form-row form-row-wrap mb-sm">
+            <fieldset class="phone">
+              <label for="phone">Phone Number:<span>*</span></label>
+              <input type="tel" name="phone" id="phone" size="25" pattern="^\(?\d{3}\)?[- ]?\d{3}[- ]?\d{4}$" />
+            </fieldset>
+            <fieldset class="email">
+              <label for="email">Email Address:<span>*</span></label>
+              <!--No pattern for email as too many cases for regex to handle everything.-->
+              <input type="email" name="email" id="email" size="25" />
+            </fieldset>
+          </div>
+          <div class="form-row form-submit mb-sm">
+            <button type="submit" class="link-btn-invert" id="btn">Submit</button>
+          </div>
+        </form>
       </div>
     </section>
 
-    <section class="content">
-      <div class="row">
-        <div class="col">
-          <h1 class="content-title">
-            Maryland Blue <br />
-            Crabs
-          </h1>
-          <button class="btn btn-main">View the Menu</button>
-        </div>
-        <div class="col overlayed-content">
-          <img src="./img/steamed.jpg" class="home-img--1" alt="A steamed Blue Crab coated in Old Bay Seasoning." />
-          <img src="./img/cookedpot.jpg" class="home-img--2" alt="A cooked pot of crabs." />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <img src="./img/boat.jpg" alt="A Maryland Crab Boat" />
-        </div>
-        <div class="col">
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab tempora, quas amet repellendus neque nostrum
-            maiores magni quaerat, voluptatum quo nisi tenetur quasi quod, alias consequatur dolorem voluptatem.
-            Reiciendis, sit!
-          </p>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam numquam veritatis tenetur reiciendis
-            quae eos nostrum voluptates harum quo labore possimus ipsa, nesciunt natus voluptatem!
-          </p>
-          <p>
-            Labore corrupti nisi neque aliquid. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis,
-            porro ex! Dicta officia dignissimos in alias optio voluptate ad eos fuga quisquam earum, fugit perspiciatis
-            ipsam accusamus culpa consequatur quos.
-          </p>
-          <button class="btn btn-main">Visit Us!</button>
-        </div>
-      </div>
-    </section>
-    <form id="form" class="form">
-      <h1 class="form-title">Request a Reservation</h1>
-      <div class="error-container">
-        <!--<h1 class='error'></h1>-->
-      </div>
-      <div class="form-row">
-        <fieldset class="title">
-          <label for="title">Title:<span>*</span></label>
-          <input id="firstname" name="firstname" type="text" />
-        </fieldset>
-        <fieldset class="firstname">
-          <label for="firstname">First name:<span>*</span></label>
-          <input id="firstname" name="firstname" type="text" placeholder="Tom" size="15" />
-        </fieldset>
-        <fieldset class="lastname">
-          <label for="lastname">Last Name:<span>*</span></label>
-          <input type="text" id="lastname" name="lastname" placeholder="Hanks" size="20" />
-        </fieldset>
-      </div>
-      <div class="form-row">
-        <fieldset class="date">
-          <label for="date">Date:<span>*</span>(mm/dd/yyyy)</label>
-          <!--Will add min/max attributes using js-->
-          <input type="date" name="date" id="date" size="10" />
-        </fieldset>
-        <fieldset class="time">
-          <label for="time">Time:<span>*</span></label>
-          <input type="datetime" name="time" id="time" size="5" />
-        </fieldset>
-        <fieldset class="party">
-          <label for="party">Party Size:<span>*</span></label>
-          <input type="text" name="party" id="party" size="2" />
-        </fieldset>
-      </div>
-      <div class="form-row">
-        <fieldset class="phone">
-          <label for="phone">Phone Number:<span>*</span></label>
-          <input type="tel" name="phone" id="phone" size="10" pattern="^\(?\d{3}\)?[- ]?\d{3}[- ]?\d{4}$" />
-        </fieldset>
-        <fieldset class="email">
-          <label for="email">Email Address:<span>*</span></label>
-          <!--No pattern for email as too many cases for regex to handle everything.-->
-          <input type="email" name="email" id="email" size="25" />
-        </fieldset>
-      </div>
-      <button type="submit" class="btn btn-secondary" id="btn">Submit</button>
-    </form>
     <footer>
-      <div class="footer-flex">
-        <div>
-          <p class="footer-p">Old Line Crab House</p>
-          <p class="footer-p">340 South Maryland Ave</p>
-          <p class="footer-p">Chicago, IL 60622</p>
-        </div>
-        <div><img src="./img/Logo.svg" class="logo-footer" alt="The Old Line Crab House Logo." /></div>
-        <div>
-          <p class="footer-p">(224) GET-CRAB (438-2722)</p>
-          <p class="footer-p">getcrabs@OldLineCrabs.com</p>
-        </div>
+      <div class="footer-address mt-lg mb-md">
+        <h4>Old Line Crab House</h4>
+        <h4>3409 South Maryland Ave</h4>
+        <h4>Chicago, IL 60622</h4>
       </div>
-      <div class="footer-up">
-        <a href="#top" class="circle">
-          <img src="./img/up.svg" class="up" alt="Go to the top of the page" />
-        </a>
+      <img class="footer-logo" src="./img/Logo.svg" alt="" />
+      <div class="footer-contact mt-sm mb-md">
+        <h4>(224) GET-CRAB (438-2722)</h4>
+        <h4>getcrabs@OldLineCrabs.com</h4>
       </div>
+      <a href="#top" class="footer-btn mb-md">
+        <img src="./img/up.svg" class="up" alt="Go to the top of the page" />
+      </a>
     </footer>
   </body>
 </html>
