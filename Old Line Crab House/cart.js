@@ -26,15 +26,15 @@ cartEl.addEventListener('click', (e) => {
       let quantity = Number(itemCountEl.innerHTML) + 1;
 
       storedItem.amount = quantity;
-      cart = cart.filter((obj) => {
-        return obj.amount !== 0;
-      });
     }
     //decrement logic
     else if (e.target.id === 'decrement-button') {
       let quantity = Number(itemCountEl.innerHTML) - 1;
 
       storedItem.amount = quantity;
+      cart = cart.filter((obj) => {
+        return obj.amount !== 0;
+      });
     }
     //remove logic
     else {
@@ -58,6 +58,8 @@ checkout.addEventListener('click', (_) => {
     'beforeend',
     '<h2 class="mt-lg">Thank you!</h2><h3>Your items will ship soon!</h3><a class="link-btn" href="./index.html">Return to Home</a>'
   );
+  //empty storage
+  localStorage.clear();
 });
 
 function retrieveCart() {
@@ -84,7 +86,7 @@ function refreshUI(arr) {
       const cartCard = `<div class="cart-obj">
         <div class="cart-item">
           <div class="cart-wrapper">
-            <img src="${cartItem.img}" alt="Product 1" />
+            <img src="${cartItem.img}" alt="${cartItem.desc}" />
             <div>
               <h3 class="item-title">${cartItem.name}</h3>
               <h5>Price: <span class="item-price">$${getPrice(cartItem.price, cartItem.amount)}</span></h5>

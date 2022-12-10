@@ -26,6 +26,7 @@ productList.addEventListener('click', (event) => {
   if (event.target.matches('#decrement-button') || event.target.matches('#increment-button')) {
     const productCard = event.target.closest('.product-card');
     const productPicture = productCard.querySelector('.product-picture').src;
+    const productDesc = productCard.querySelector('.product-picture').alt;
     const productTitle = productCard.querySelector('.product-title').innerText;
     const productPrice = productCard.querySelector('.product-price').innerText;
     const itemCount = productCard.querySelector('#item-count');
@@ -35,7 +36,7 @@ productList.addEventListener('click', (event) => {
       amount > 0 ? (amount -= 1) : (amount = 0);
       itemCount.innerText = amount;
 
-      let newItem = { name: productTitle, amount: amount, price: productPrice, img: productPicture };
+      let newItem = { name: productTitle, amount: amount, price: productPrice, img: productPicture , desc: productDesc};
 
       let oldItem = cart.find((obj) => {
         return obj.name === newItem.name;
@@ -51,7 +52,7 @@ productList.addEventListener('click', (event) => {
       let amount = Number(itemCount.innerText) + 1;
       itemCount.innerText = amount;
 
-      let newItem = { name: productTitle, amount: amount, price: productPrice, img: productPicture };
+      let newItem = { name: productTitle, amount: amount, price: productPrice, img: productPicture, desc: productDesc };
 
       let oldItem = cart.find((obj) => {
         return obj.name === newItem.name;

@@ -1,21 +1,224 @@
+//menu
 'use strict';
 
-/*This is majorly refractored code. My original way worked, but included a nasty bug (couldn't solve) and created infinite (literally) console warnings. This is an attempt to fix those issues, but may be a bit uglier?*/
+const seafood = document.querySelector('#seafood');
+const landfood = document.querySelector('#landfood');
+const veggie = document.querySelector('#veggie');
+const drinks = document.querySelector('#drinks');
+const dessert = document.querySelector('#dessert');
 
-const seafoodEl = document.querySelector('#seafood');
+seafood.addEventListener('mouseenter', (_) => {
+  let img = document.querySelector('#seafood-img');
+  img.style.display = 'block';
+  img.style.opacity = .6;
+});
+seafood.addEventListener('mousemove', (e) => {
+  trackMouse(e, seafood);
+});
+seafood.addEventListener('mouseleave', (_) => {
+  let img = document.querySelector('#seafood-img');
+  img.style.display = 'none';
+  img.style.opacity = 0;
+  img.style.top = 330;
+  img.style.left = 800;
+});
 
-const seafood = `<div class="all-seafood"><h1 id="all-seafood-title" class="menu-title">Seafood</h1><div class="menu-img"><img src="./img/seafood.png" alt="" /></div><div class="menu-item"><h2>1 Dozen 6.6 - 8.5oz Maryland Steamed Blue Crabs</h2><h3>A dozen perfectly steamed fresh large Maryland Blue Crabs</h3><h4>$95.00</h4></div><div class="menu-item"><h2>1 Lb Steamed Scallops</h2><h3>Served alongside butter and Old Bay</h3><h4>$18.00</h4></div><div class="menu-item"><h2>1/2 Dozen Large Chesapeake Oysters</h2><h3>6 beautiful large oysters direct from the Chesapeake. Raw or Steamed</h3><h4>$15.00</h4></div><div class="menu-item"><h2>Maryland Crab Soup</h2><h3>A hearty bowl of lump crab, tomatoes, stock, & veggies</h3><h4>$10.00</h4></div><div class="menu-item"><h2>Table Sampler</h2><h3>   We recommend you bring friends! This meal includes 8 steamed blue crabs, 1 lb clams, 1 lb mussels, & 10 oysters.</h3><h4>$85.00</h4></div></div>`;
+landfood.addEventListener('mouseenter', (_) => {
+  let img = document.querySelector('#landfood-img');
+  img.style.display = 'block';
+  img.style.opacity = .8;
+});
+landfood.addEventListener('mousemove', (e) => {
+  trackMouse(e, landfood);
+});
+landfood.addEventListener('mouseleave', (_) => {
+  let img = document.querySelector('#landfood-img');
+  img.style.display = 'none';
+  img.style.opacity = 0;
+  img.style.top = 330;
+  img.style.left = 800;
+});
 
-const landfoodEl = document.querySelector('#landfood');
+veggie.addEventListener('mouseenter', (_) => {
+  let img = document.querySelector('#veggie-img');
+  img.style.display = 'block';
+  img.style.opacity = .8;
+});
+veggie.addEventListener('mousemove', (e) => {
+  trackMouse(e, veggie);
+});
+veggie.addEventListener('mouseleave', (_) => {
+  let img = document.querySelector('#veggie-img');
+  img.style.display = 'none';
+  img.style.opacity = 0;
+  img.style.top = 330;
+  img.style.left = 800;
+});
 
-const landfood = `<div class="all-landfood"><h1 id="all-landfood-title"class="menu-title">Meat</h1><div  class="menu-img"><img src="./img/landfood.png" alt=""/></div><div class="menu-item"><h2>Baltimore Pit Sandwich</h2><h3>A hidden gem, this sandich consists of thinly sliced charcoal-roasted beef or turkey with onions & tiger or BBQ sauce.</h3><h4>$10.00</h4></div><div class="menu-item"><h2>New Jersey THEC w/SPK</h2><h3>A Garden State special: Taylor Ham, egg, cheese with salt, pepper, & ketchup. Available on a toasted Everything Bagel (classic) or a roll.</h3><h4>$7.50</h4></div><div class="menu-item"><h2>Philly Roast Pork Sandwich</h2><h3>Tender roasted pork on a seeded roll, with hot provolone cheese and garlic broccoli rabe.</h3><h4>$8.00</h4></div><div class="menu-item"><h2>1/2 Lb Potato Salad</h2>  <h3>Classic German Potato Salad.</h3><h4>$6.00</h4></div><div class="menu-item"><h2>1/2 Lb Mac 'n' Cheese</h2><h3>Classic American Macaroni & Cheese.</h3><h4>$6.00</h4></div></div>`;
+drinks.addEventListener('mouseenter', (_) => {
+  let img = document.querySelector('#drinks-img');
+  img.style.display = 'block';
+  img.style.opacity = .8;
+});
+drinks.addEventListener('mousemove', (e) => {
+  trackMouse(e, drinks);
+});
+drinks.addEventListener('mouseleave', (_) => {
+  let img = document.querySelector('#drinks-img');
+  img.style.display = 'none';
+  img.style.opacity = 0;
+  img.style.top = 330;
+  img.style.left = 800;
+});
 
-const veggieEl = document.querySelector('#veggie');
+dessert.addEventListener('mouseenter', (_) => {
+  let img = document.querySelector('#dessert-img');
+  img.style.display = 'block';
+  img.style.opacity = .8;
+});
+dessert.addEventListener('mousemove', (e) => {
+  trackMouse(e, dessert);
+});
+dessert.addEventListener('mouseleave', (_) => {
+  let img = document.querySelector('#dessert-img');
+  img.style.display = 'none';
+  img.style.opacity = 0;
+  img.style.top = 330;
+  img.style.left = 800;
+});
 
-const veggie = `<div class="all-veggie"><h1 id="all-veggie-title" class="menu-title">Veggie</h1><div class="menu-img"><img src="./img/veggie.png" alt="" /></div><div class="menu-item"><h2>Maryland Steamed Blue Crabs</h2><h3>A dozen perfectly steamed fresh Maryland Blue Crabs</h3><h4>$18.00</h4></div><div class="menu-item"><h2>Maryland Steamed Blue Crabs</h2><h3>A dozen perfectly steamed fresh Maryland Blue Crabs</h3><h4>$18.00</h4></div>
-<div class="menu-item"><h2>Maryland Steamed Blue Crabs</h2><h3>A dozen perfectly steamed fresh Maryland Blue Crabs</h3><h4>$18.00</h4></div><div class="menu-item"><h2>Maryland Steamed Blue Crabs</h2><h3>A dozen perfectly steamed fresh Maryland Blue Crabs</h3><h4>$18.00</h4></div><div class="menu-item"><h2>Maryland Steamed Blue Crabs</h2><h3>A dozen perfectly steamed fresh Maryland Blue Crabs</h3><h4>$18.00</h4></div></div>`;
+function trackMouse(e, item) {
+  let img = document.querySelector(`#${item.id}-img`);
+  const { top, left, height, width } = item.getBoundingClientRect();
+  const { clientX, clientY } = e;
+  switch (item.id) {
+    case 'seafood': {
+      img.style.top = `${clientY - (top - 315)}px`;
+      img.style.left = `${clientX - (left + 315 / 2)}px`;
+      break;
+    }
+    case 'landfood': {
+      img.style.top = `${clientY - (top - (315 + (height + 60)))}px`;
+      img.style.left = `${clientX - (left + 315 / 2)}px`;
+      break;
+    }
+    case 'veggie': {
+      img.style.top = `${clientY - (top - (315 + (height + 60) * 2))}px`;
+      img.style.left = `${clientX - (left + 315 / 2)}px`;
+      break;
+    }
+    case 'drinks': {
+      img.style.top = `${clientY - (top - (315 + (height + 60) * 3))}px`;
+      img.style.left = `${clientX - (left + 315 / 2)}px`;
+      break;
+    }
+    case 'dessert':
+    default: {
+      img.style.top = `${clientY - (top - (315 + (height + 60) * 4))}px`;
+      img.style.left = `${clientX - (left + 315 / 2)}px`;
+      break;
+    }
+  }
+  if (clientX < left || clientY < top || clientX > left + width || clientY > top + height) {
+    img.style.display = 'none';
+    img.style.opacity = 0;
+    img.style.top = 330;
+    img.style.left = 800;
+  }
+}
 
-const drinksEl = document.querySelector('#drinks');
+//onclicks (seperate b/c above adds collasped menu to .menu, adding the event lisstners to the content that needs w/o)
+document.querySelector('#seafood').addEventListener('click', (e) => {
+  e.preventDefault();
 
-const drinks = `<div class="all-drinks"><h1 id="all-drinks-title" class="menu-title">Drinks</h1><div class="menu-img"><img src="./img/drinks.png" alt="" /></div><div class="menu-item"><h2>Maryland Steamed Blue Crabs</h2><h3>A dozen perfectly steamed fresh Maryland Blue Crabs</h3><h4>$18.00</h4></div><div class="menu-item"><h2>Maryland Steamed Blue Crabs</h2><h3>A dozen perfectly steamed fresh Maryland Blue Crabs</h3><h4>$18.00</h4></div><div class="menu-item"><h2>Maryland Steamed Blue Crabs</h2><h3>A dozen perfectly steamed fresh Maryland Blue Crabs</h3><h4>$18.00</h4></div><div class="menu-item"><h2>Maryland Steamed Blue Crabs</h2><h3>A dozen perfectly steamed fresh Maryland Blue Crabs</h3><h4>$18.00</h4></div><div class="menu-item"><h2>Maryland Steamed Blue Crabs</h2><h3>A dozen perfectly steamed fresh Maryland Blue Crabs</h3><h4>$18.00</h4></div></div>`;
+  //collaspe menu
+  document.querySelector('#seafood').classList.add('collapsed');
+  //show content
+  document.querySelector('.all-seafood').classList.remove('collapsed');
 
+  //add listener on new titlw
+  document.querySelector('#all-seafood-title').addEventListener('click', (e) => {
+    e.preventDefault();
+
+    //collaspe menu
+    document.querySelector('#seafood').classList.remove('collapsed');
+    //show content
+    document.querySelector('.all-seafood').classList.add('collapsed');
+  });
+});
+
+document.querySelector('#landfood').addEventListener('click', (e) => {
+  e.preventDefault();
+
+  //collaspe menu
+  document.querySelector('#landfood').classList.add('collapsed');
+  //show content
+  document.querySelector('.all-landfood').classList.remove('collapsed');
+
+  //add listener on new titlw
+  document.querySelector('#all-landfood-title').addEventListener('click', (e) => {
+    e.preventDefault();
+
+    //collaspe menu
+    document.querySelector('#landfood').classList.remove('collapsed');
+    //show content
+    document.querySelector('.all-landfood').classList.add('collapsed');
+  });
+});
+
+document.querySelector('#veggie').addEventListener('click', (e) => {
+  e.preventDefault();
+
+  //collaspe menu
+  document.querySelector('#veggie').classList.add('collapsed');
+  //show content
+  document.querySelector('.all-veggie').classList.remove('collapsed');
+
+  //add listener on new titlw
+  document.querySelector('#all-veggie-title').addEventListener('click', (e) => {
+    e.preventDefault();
+
+    //collaspe menu
+    document.querySelector('#veggie').classList.remove('collapsed');
+    //show content
+    document.querySelector('.all-veggie').classList.add('collapsed');
+  });
+});
+
+document.querySelector('#drinks').addEventListener('click', (e) => {
+  e.preventDefault();
+
+  //collaspe menu
+  document.querySelector('#drinks').classList.add('collapsed');
+  //show content
+  document.querySelector('.all-drinks').classList.remove('collapsed');
+
+  //add listener on new titlw
+  document.querySelector('#all-drinks-title').addEventListener('click', (e) => {
+    e.preventDefault();
+
+    //collaspe menu
+    document.querySelector('#drinks').classList.remove('collapsed');
+    //show content
+    document.querySelector('.all-drinks').classList.add('collapsed');
+  });
+});
+
+document.querySelector('#dessert').addEventListener('click', (e) => {
+  e.preventDefault();
+
+  //collaspe menu
+  document.querySelector('#dessert').classList.add('collapsed');
+  //show content
+  document.querySelector('.all-dessert').classList.remove('collapsed');
+
+  //add listener on new titlw
+  document.querySelector('#all-dessert-title').addEventListener('click', (e) => {
+    e.preventDefault();
+
+    //collaspe menu
+    document.querySelector('#dessert').classList.remove('collapsed');
+    //show content
+    document.querySelector('.all-dessert').classList.add('collapsed');
+  });
+});
