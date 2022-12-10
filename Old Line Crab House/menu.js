@@ -10,7 +10,7 @@ const dessert = document.querySelector('#dessert');
 seafood.addEventListener('mouseenter', (_) => {
   let img = document.querySelector('#seafood-img');
   img.style.display = 'block';
-  img.style.opacity = .6;
+  img.style.opacity = 0.6;
 });
 seafood.addEventListener('mousemove', (e) => {
   trackMouse(e, seafood);
@@ -26,7 +26,7 @@ seafood.addEventListener('mouseleave', (_) => {
 landfood.addEventListener('mouseenter', (_) => {
   let img = document.querySelector('#landfood-img');
   img.style.display = 'block';
-  img.style.opacity = .8;
+  img.style.opacity = 0.8;
 });
 landfood.addEventListener('mousemove', (e) => {
   trackMouse(e, landfood);
@@ -42,7 +42,7 @@ landfood.addEventListener('mouseleave', (_) => {
 veggie.addEventListener('mouseenter', (_) => {
   let img = document.querySelector('#veggie-img');
   img.style.display = 'block';
-  img.style.opacity = .8;
+  img.style.opacity = 0.8;
 });
 veggie.addEventListener('mousemove', (e) => {
   trackMouse(e, veggie);
@@ -58,7 +58,7 @@ veggie.addEventListener('mouseleave', (_) => {
 drinks.addEventListener('mouseenter', (_) => {
   let img = document.querySelector('#drinks-img');
   img.style.display = 'block';
-  img.style.opacity = .8;
+  img.style.opacity = 0.8;
 });
 drinks.addEventListener('mousemove', (e) => {
   trackMouse(e, drinks);
@@ -74,7 +74,7 @@ drinks.addEventListener('mouseleave', (_) => {
 dessert.addEventListener('mouseenter', (_) => {
   let img = document.querySelector('#dessert-img');
   img.style.display = 'block';
-  img.style.opacity = .8;
+  img.style.opacity = 0.8;
 });
 dessert.addEventListener('mousemove', (e) => {
   trackMouse(e, dessert);
